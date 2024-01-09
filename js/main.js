@@ -32,9 +32,10 @@ let overAgeCost = overAgePrice *  userKm;
 let underAgeCost = underAgePrice * userKm;
 let ticketPriceCost = ticketPrice *  userKm;
 
-
-if(userAge > 64){
-    ticket.innerText = 'Il prezzo del tuo biglietto è di' + overAgeCost.toFixed(2) + '€'
+if(isNaN(userAge) || isNaN(userKm) || userAge == null || userKm == null){
+    ticket.innerText = 'I dati inseriti non sono corretti riprova'
+} else if(userAge > 64){
+    ticket.innerText = 'Il prezzo del tuo biglietto è di ' + overAgeCost.toFixed(2) + '€'
 } else if(userAge < 18){
     ticket.innerText = 'Il prezzo del tuo biglietto è di ' + underAgeCost.toFixed(2) + '€'
 } else{
